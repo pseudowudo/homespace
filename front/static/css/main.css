@@ -1,0 +1,7 @@
+#myVideo {
+    position: fixed;
+    z-index: -1000;
+    filter: brightness(25%);
+  }
+
+  
