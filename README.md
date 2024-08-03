@@ -3,12 +3,12 @@ This is a project by [farthestmage](https://github.com/farthestmage) & [pseudowu
 
 > This is an ongoing project.
 
-![home](https://github.com/username/homespace/blob/master/ss/1.png?raw=true)
+![home](https://github.com/pseudowudo/homespace/blob/master/ss/1.png?raw=true)
 
-![about](https://github.com/username/homespace/blob/master/ss/2.png?raw=true)
+![about](https://github.com/pseudowudo/homespace/blob/master/ss/2.png?raw=true)
 
-![login](https://github.com/username/homespace/blob/master/ss/3.png?raw=true)
+![login](https://github.com/pseudowudo/homespace/blob/master/ss/3.png?raw=true)
 
-![day](https://github.com/username/homespace/blob/master/ss/4.png?raw=true)
+![day](https://github.com/pseudowudo/homespace/blob/master/ss/4.png?raw=true)
 
-![night](https://github.com/username/homespace/blob/master/ss/5.png?raw=true)
+![night](https://github.com/pseudowudo/homespace/blob/master/ss/5.png?raw=true)
