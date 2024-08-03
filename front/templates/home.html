@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
+{% block nav %}
+<li>
+    <a href="{{ url_for('register') }}" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Sign In</a>
+  </li>
+  <li>
+    <a href="{{ url_for('login') }}" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Log In</a>
+  </li>
+{% endblock nav %}
 {% block content %}
 <div>
     <div class="flex items-center justify-center mt-[250px]">
@@ -9,10 +17,10 @@
         <h1 data-tilt-full-page-listening class="absolute card text-[175px] bg-white inline-block text-transparent bg-clip-text">Homespace</h1>    
     </div>
         <div class="flex items-center justify-center mt-[150px]">
-            <h1 data-tilt-full-page-listening class=" card text-[56] bg-white inline-block text-transparent bg-clip-text">Your own place.&nbsp;&nbsp;&nbsp;</h1>
+            <h1 data-tilt-full-page-listening class=" card text-[20px] font-bold bg-white inline-block text-transparent bg-clip-text">Your own place.&nbsp;&nbsp;&nbsp;</h1>
         </div>
         <div class="flex items-center justify-center mt-[50px]">
-        <button type="button" onclick="sweet();" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">Know more</button>
+        <button type="button" onclick="sweet();" class="outline-none text-white bg-green-700 hover:bg-green-800 ring-2 ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">Know more</button>
         </div>
 </div>
 

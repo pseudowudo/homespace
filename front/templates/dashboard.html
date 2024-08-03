@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block nav %}
+<li>
+  <a href="{{ url_for('profile') }}" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Profile</a>
+</li>
+<li>
+  <a href="{{ url_for('logout') }}" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Logout</a>
+</li>
+
+{% endblock nav %}
+{% block content %}
+
+
+
+
+<div style="border: solid white 2px; color: white; border-radius: 25px ; background-color: rgba(0, 0, 0, 0.5);; position: absolute; top:50%; left: 50%; -ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); padding: 30px">
+<h2>Welcome, {{username}}<br></h1>
+<h4>Your IP address is {{ip}}</h4>
+
+<h3>Current temperature in {{loc1}}, {{loc2}} is {{temp}}° C.</h3>
+
+
+
+<img src="{{icon}}">
+<hr style="color: white;">
+<h2><u>To-do list</u></h2> <h5>Current objectives</h5>
+
+{% for tod in todois %}
+  {% if ids==tod.user_id %}
+    <input type="checkbox" name={{tod.user_id}} value={{tod.title}}>{{tod.title}}
+    <br>
+  {% endif %}
+{% endfor %}
+
+<br>
+
+
+<form method="POST" action="">
+  {{form.hidden_tag()}}{{form.title}}
+  {{form.submit}}
+</form><br></div>
+
+
+
+{% endblock content %}

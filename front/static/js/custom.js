@@ -9,3 +9,14 @@ function sweet(){
       })
 }
 
+function profile(){
+  Swal.fire({
+      title: 'Profile',
+      confirmButtonText: 'Close',
+      html:
+      'Under construction lmao',
+
+
+    })
+}
+

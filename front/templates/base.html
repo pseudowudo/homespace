@@ -5,31 +5,56 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body class="bg-gray-900">
-
-        <video autoplay muted loop id="myVideo" class="z-0">
-            <source src="{{ url_for('static', filename='bg.mp4') }}" type="video/mp4">
-          </video>
+    <body>
+        <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://kit.fontawesome.com/5664de715b.js" crossorigin="anonymous"></script>
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+        <div id="particles-js"></div>
+        <script>
+          particlesJS.load("particles-js", "{{ url_for('static', filename='particles.json') }}",
+          function(){
+          console.log("particles.json has loaded");
+      });
+      </script>
 
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
         <div class="h-screen">
+
 
             <nav class="border-green-500 bg-black">
               <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                  <i class="fa-solid fa-clover fa-xl some-element" style="color: #04a834;"></i>  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Homespace</span>
+                <a href="{{url_for('home')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                  <i class="fa-solid fa-mountain-city fa-xl some-element" style="color: #04a834;"></i>  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Homespace</span>
                 </a>
                 
                 <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-                  <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-                    <li>
-                      <a href="" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Sign In</a>
-                    </li>
-                    <li>
-                      <a href="" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-green-500 md:hover:bg-transparent md:border-0 md:hover:text-green-500 ">Log In</a>
-                    </li>
+
+                  <ul class="flex flex-col text-[15px] mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                    {% block nav %}{% endblock nav %}
+
+                    
                   </ul>
                 </div>
               </div>
